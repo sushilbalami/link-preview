@@ -79,8 +79,10 @@ export async function getServerSideProps({ req, res, query }) {
       "public, s-maxage=30, stale-while-revalidate=60"
     );
     const data = await object.json();
+    console.log(data, "----Success-----");
     return { props: { data, lastFetched: new Date().toUTCString() } };
   } catch (e) {
+    console.log(e, "----Error-----");
     const data = {
       statusCode: 500,
       lastFetched: new Date().toUTCString(),
