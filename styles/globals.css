@@ -1550,6 +1550,11 @@ select{
   line-height: 1rem;
 }
 
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .font-extrabold{
   font-weight: 800;
 }

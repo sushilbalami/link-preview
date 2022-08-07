@@ -7,7 +7,11 @@ import NormalCard from "../../components/Card/NormalCard";
 import Tabs from "../../components/Tabs";
 
 function index({ data, lastFetched }) {
-  return (
+  return data?.statusCode === 500 ? (
+    <div className="flex flex-col items-center justify-center h-screen">
+      <h1 className="text-2xl font-bold text-gray-800">Failed to Fetch Data</h1>
+    </div>
+  ) : (
     <div className="bg-orange-50 pb-8">
       <Navbar />
       <div className="w-full min-h-screen px-2 lg:px-8 mt-8">
