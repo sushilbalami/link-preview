@@ -6,15 +6,38 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tailwindcss": "npx tailwindcss -i ./styles/input.css -o ./styles/globals.css --watch"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^1.0.0-beta.1",
+    "@headlessui/react": "^1.6.6",
+    "@heroicons/react": "^1.0.6",
+    "@tailwindcss/line-clamp": "^0.4.0",
+    "@types/cheerio": "^0.22.31",
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.12",
+    "formik": "^2.2.9",
     "next": "12.2.4",
+    "nextjs-progressbar": "^0.0.14",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-circular-progressbar": "^2.1.0",
+    "react-dom": "18.2.0",
+    "react-tooltip": "^4.2.21"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.5.2",
+    "@tailwindcss/typography": "^0.5.4",
+    "autoprefixer": "^10.4.8",
     "eslint": "8.21.0",
-    "eslint-config-next": "12.2.4"
+    "eslint-config-next": "12.2.4",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.7"
+  },
+  "overrides": {
+    "@formkit/auto-animate": {
+      "react": "18.2.0"
+    }
   }
 }
