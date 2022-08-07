@@ -94,7 +94,7 @@ export default function Home() {
                   initialValues={{ url: "", headers: "" }}
                   onSubmit={(values) => {
                     Router.push(
-                      `/scan?url=${new URL(values.url).origin}&headers=${
+                      `/scan?url=${values.url}&headers=${
                         values.headers.trim().length > 0 ? values.headers : "{}"
                       }`
                     );
