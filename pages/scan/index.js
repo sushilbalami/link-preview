@@ -82,7 +82,7 @@ export async function getServerSideProps({ req, res, query }) {
     console.log(data, "----Success-----");
     return { props: { data, lastFetched: new Date().toUTCString() } };
   } catch (e) {
-    console.log(e, "----Error-----");
+    console.error(e, "----Error-----");
     const data = {
       statusCode: 500,
       lastFetched: new Date().toUTCString(),
