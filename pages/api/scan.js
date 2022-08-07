@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     const { query } = req;
     const { url } = query;
     const data = await fetch(url, {
-      mode: "cors",
+      mode: "no-cors",
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
@@ -214,6 +214,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json(json);
   } catch (e) {
+    console.log(e);
     return res.status(500).json({
       statusCode: 500,
       message: "Failed to Fetch Data",
