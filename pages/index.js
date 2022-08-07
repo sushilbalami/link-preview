@@ -1,6 +1,6 @@
 import { Formik, Form, Field } from "formik";
-import Tabs from "../components/tabs/Tab";
 import Router from "next/router";
+import Tabs from "../components/Tabs";
 
 export default function Home() {
   return (

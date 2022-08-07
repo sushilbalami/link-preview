@@ -4,9 +4,9 @@ import ListHeading from "../../components/Headings/Heading";
 import ReportsHeading from "../../components/Header/Report";
 import TwitterCard from "../../components/Card/TwitterCard";
 import NormalCard from "../../components/Card/NormalCard";
-import Tabs from "../../components/tabs/Tab";
+import Tabs from "../../components/Tabs";
 
-function index({ data,lastFetched }) {
+function index({ data, lastFetched }) {
   return (
     <div className="bg-orange-50 pb-8">
       <Navbar />
@@ -63,6 +63,7 @@ export async function getServerSideProps({ req, res, query }) {
   }
 
   try {
+    // I know passing header in params is unsafe but I don't have any other way - wanna participate in this competition and complete on less time
     let headers = {};
     if (IsJsonString(query?.headers)) {
       headers = JSON.parse(query?.headers);
