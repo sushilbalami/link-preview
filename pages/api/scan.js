@@ -21,9 +21,9 @@ export default async function handler(req, res) {
     title = title ? title : baseTitle.text();
     const description = $(`meta[name="description"]`).attr("content");
     let favicon = $(`link[rel="icon"]`).attr("href");
-    favicon = favicon?.includes(new URL(url).hostname)
-      ? favicon
-      : `${new URL(url).origin}${favicon}`;
+    // favicon = favicon?.includes(new URL(url).hostname)
+    //   ? favicon
+    //   : `${new URL(url).origin}${favicon}`;
     const thumbnail = $(`meta[property="og:image"]`).attr("content");
     const canonical = $(`link[rel="canonical"]`).attr("href");
     const basicTags = [
