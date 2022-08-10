@@ -1,5 +1,12 @@
 import * as cheerio from "cheerio";
 
+const hasHostName = (url) => {
+  try {
+    new URL(url);
+  } catch (error) {
+    return false;
+  }
+};
 export default async function handler(req, res) {
   // I found this competition at last time so, code is hard coded in many place sorry :), but want to participate in it so.
   try {
@@ -21,9 +28,9 @@ export default async function handler(req, res) {
     title = title ? title : baseTitle.text();
     const description = $(`meta[name="description"]`).attr("content");
     let favicon = $(`link[rel="icon"]`).attr("href");
-    // favicon = favicon?.includes(new URL(url).hostname)
-    //   ? favicon
-    //   : `${new URL(url).origin}${favicon}`;
+    favicon = hasHostName(favicon)
+      ? favicon
+      : `${new URL(url).origin}${favicon}`;
     const thumbnail = $(`meta[property="og:image"]`).attr("content");
     const canonical = $(`link[rel="canonical"]`).attr("href");
     const basicTags = [
